@@ -24,19 +24,19 @@ humans = [
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
 print("Starts with D:")
-a = [human for human in humans if human.name.startswith('D')]
+a = [human.name for human in humans if human.name.startswith('D')]
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name ends in "e".
 print("Ends with e:")
-b = [human for human in humans if human.name.startswith('E')]
+b = [human.name for human in humans if human.name.endswith('e')]
 print(b)
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with any letter between 'C' and 'G' inclusive.
 print("Starts between C and G, inclusive:")
-c = [human for human in humans if human.name.startswith('C') or human.name.startswith('G')]
+c = [human.name for human in humans if human.name.startswith('C') or human.name.startswith('D') or human.name.startswith('E') or human.name.startswith('F') or human.name.startswith('G')]
 print(c)
 
 # Write a list comprehension that creates a list of all the ages plus 10.
@@ -54,7 +54,7 @@ print(e)
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
 # inclusive.
 print("Names and ages between 27 and 32:")
-f = [(f"{human.name}", human.age) for human in humans]
+f = [(f"{human.name}", human.age) for human in humans if human.age >= 27 and human.age <= 32]
 print(f)
 
 # Write a list comprehension that creates a list of new Humans like the old
